@@ -48,7 +48,7 @@ class Skills extends Component {
                 <div>
                     <ul>
                         {this.state.skills.map((skill) => {
-                            return <li>{skill.text}</li>
+                            return <li key={skill.id}>{skill.text}</li>
                         })}
                     </ul>
                 </div>
