@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+
 class Personal extends Component {
     constructor (props) {
         super(props)
@@ -39,7 +40,7 @@ class Personal extends Component {
                     <input type="tel" name="phone" value={this.state.phone} onChange={this.handleChange} id="phone" pattern="[0-9]" placeholder="Phone Number"></input>
 
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange}  id="first_name" placeholder="First Name"></input>
+                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange}  id="first_name" placeholder="Email"></input>
 
                     <label htmlFor="address">Address</label>
                     <input type="text" name="address" value={this.state.address} onChange={this.handleChange}  id="address" placeholder="Address"></input>
