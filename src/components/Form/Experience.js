@@ -14,10 +14,11 @@ class Experience extends Component {
 
         this.handleChange = this.handleChange.bind(this)
     }
-
     handleChange = (event) => {
-        const value = event.target.value
-        this.setState({...this.state, [event.target.name]: value})
+        const target = event.target
+        const value = target.value;
+        const name = target.name
+        this.setState({[name]: value})
     }
     render() {
         return (

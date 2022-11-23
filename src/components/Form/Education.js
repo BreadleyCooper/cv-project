@@ -18,9 +18,12 @@ class Education extends Component {
     }
 
     handleChange = (event) => {
-        const value = event.target.value;
-        this.setState({...this.state, [event.target.name]: value})
+        const target = event.target
+        const value = target.value;
+        const name = target.name
+        this.setState({[name]: value})
     }
+
 
     render() {
         return(
