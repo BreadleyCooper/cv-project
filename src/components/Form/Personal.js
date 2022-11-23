@@ -22,6 +22,12 @@ class Personal extends Component {
         const value = event.target.value;
         this.setState({...this.state, [event.target.name]: value})
     }
+
+    handleTextareaChange = (event) => {
+        this.setState({
+            personalDescription: event.target.value
+        })
+    }
     render() {
         return (
             <div>
@@ -46,7 +52,7 @@ class Personal extends Component {
                     <input type="text" name="address" value={this.state.address} onChange={this.handleChange}  id="address" placeholder="Address"></input>
 
                     <label htmlFor="description">Personal Description</label>
-                    <textarea type="text" name="description" value={this.state.personalDescription} onChange={this.handleChange}  id="description" placeholder="Describe yourself here"></textarea>
+                    <textarea type="text" name="description" value={this.state.personalDescription} onChange={this.handleTextareaChange}  id="description" placeholder="Describe yourself here"></textarea>
                     
                 </form>
             </div>
