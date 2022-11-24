@@ -5,14 +5,18 @@ class Experience extends Component {
         super(props)
 
         this.state = {
+            experince: {
             position: "",
             company: "",
             location: "",
             dateFrom: "",
             dateTo: "",
+            },
+            experiences: []
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
     handleChange = (event) => {
         const target = event.target
@@ -20,11 +24,24 @@ class Experience extends Component {
         const name = target.name
         this.setState({[name]: value})
     }
+    
+
+    handleSubmit =(event) => {
+        event.preventDefault();
+        this.setState({
+            experiences: this.state.experiences.concat(this.state.experince),
+            position: "",
+            company: "",
+            location: "",
+            dateFrom: "",
+            dateTo: "",
+        })
+    }
     render() {
         return (
             <div>
                 <h2>{this.props.title}</h2>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor="position">Position</label>
                     <input type="text" name="position" value={this.state.position} onChange={this.handleChange}  id="position" placeholder="Position"></input>
 
@@ -39,6 +56,7 @@ class Experience extends Component {
                 
                     <label htmlFor="dateTo">To</label>
                     <input type="date" name="dateTo" value={this.state.dateTo} onChange={this.handleChange}  id="dateTo" placeholder="To"></input>
+                    <button type="submit">Add</button>
                 </form>
             </div>
 
