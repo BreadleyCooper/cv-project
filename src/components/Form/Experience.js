@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import uniqid from "uniqid"
 
 class Experience extends Component {
     constructor(props) {
@@ -6,11 +7,12 @@ class Experience extends Component {
 
         this.state = {
             experince: {
-            position: "",
-            company: "",
-            location: "",
-            dateFrom: "",
-            dateTo: "",
+                id: uniqid(),
+                position: "",
+                company: "",
+                location: "",
+                dateFrom: "",
+                dateTo: "",
             },
             experiences: []
         }
@@ -22,7 +24,13 @@ class Experience extends Component {
         const target = event.target
         const value = target.value;
         const name = target.name
-        this.setState({[name]: value})
+        this.setState({
+            experience: {
+                [name]: value,
+                id: this.state.experince.id
+                // THIS IS MAKING A NEW STATE OBJECT, RATHER THAN UPDATING THE CURRENT STATE
+            }
+        })
     }
     
 
@@ -30,11 +38,15 @@ class Experience extends Component {
         event.preventDefault();
         this.setState({
             experiences: this.state.experiences.concat(this.state.experince),
-            position: "",
-            company: "",
-            location: "",
-            dateFrom: "",
-            dateTo: "",
+            // THE VALUES ARE NOT GETTING SAVED INTO THE EXPERIENCES ARRAY??
+            experience: {
+                id: uniqid(),
+                position: "",
+                company: "",
+                location: "",
+                dateFrom: "",
+                dateTo: "",
+            }
         })
     }
     render() {
