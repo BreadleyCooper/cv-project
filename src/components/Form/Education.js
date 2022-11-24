@@ -1,19 +1,24 @@
 import React, { Component } from "react";
+import uniqid from "uniqid"
 
 class Education extends Component {
     constructor (props) {
         super(props)
 
         this.state = {
-            institution: "",
-            location: "",
-            qualification: "",
-            subject: "",
-            dateFrom: "",
-            dateTo: "",
+            education: {
+                institution: "",
+                location: "",
+                qualification: "",
+                subject: "",
+                dateFrom: "",
+                dateTo: "",
+                },
+            educations: []
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
 
     }
 
@@ -21,7 +26,29 @@ class Education extends Component {
         const target = event.target
         const value = target.value;
         const name = target.name
-        this.setState({[name]: value})
+        this.setState({
+            education: {
+                ...this.state.education,
+                [name]: value,
+                id: this.state.education.id
+            }
+        })
+    }
+
+    handleSubmit =(event) => {
+        event.preventDefault();
+        this.setState({
+            educations: [...this.state.educations, this.state.education],
+            education: {
+                id: uniqid(),
+                institution: "",
+                location: "",
+                qualification: "",
+                subject: "",
+                dateFrom: "",
+                dateTo: "",
+            }
+        })
     }
 
 
@@ -29,24 +56,24 @@ class Education extends Component {
         return(
             <div>
                 <h2>{this.props.title}</h2>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor="institution">Institution Name</label>
-                    <input type="text" name="institution" value={this.state.institution} onChange={this.handleChange}  id="institution" placeholder="Institution Name"></input>
+                    <input type="text" name="institution" value={this.state.education.institution} onChange={this.handleChange}  id="institution" placeholder="Institution Name"></input>
 
                     <label htmlFor="location">Location</label>
-                    <input type="text" name="location" value={this.state.location} onChange={this.handleChange}  id="location" placeholder="Location"></input>
+                    <input type="text" name="location" value={this.state.education.location} onChange={this.handleChange}  id="location" placeholder="Location"></input>
 
                     <label htmlFor="qualification">Qualification</label>
-                    <input type="text" name="qualification" value={this.state.qualification} onChange={this.handleChange}  id="qualification" placeholder="Qualification"></input>
+                    <input type="text" name="qualification" value={this.state.education.qualification} onChange={this.handleChange}  id="qualification" placeholder="Qualification"></input>
                 
                     <label htmlFor="subject">Subject</label>
-                    <input type="text" name="subject" value={this.state.subject} onChange={this.handleChange}  id="subject" placeholder="Subject"></input>
+                    <input type="text" name="subject" value={this.state.education.subject} onChange={this.handleChange}  id="subject" placeholder="Subject"></input>
 
-                    <label htmlFor="dateFrom">Location</label>
-                    <input type="date" name="dateFrom" value={this.state.dateFrom} onChange={this.handleChange}  id="dateFrom" placeholder="From"></input>
+                    <label htmlFor="dateFrom">From</label>
+                    <input type="date" name="dateFrom" value={this.state.education.dateFrom} onChange={this.handleChange}  id="dateFrom" placeholder="From"></input>
 
-                    <label htmlFor="dateTo">Location</label>
-                    <input type="date" name="dateTo" value={this.state.dateTo} onChange={this.handleChange}  id="dateTo" placeholder="To"></input>
+                    <label htmlFor="dateTo">To</label>
+                    <input type="date" name="dateTo" value={this.state.education.dateTo} onChange={this.handleChange}  id="dateTo" placeholder="To"></input>
 
                     <button type="submit">Add</button>
                 </form>
