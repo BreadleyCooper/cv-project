@@ -14,6 +14,7 @@ class Skills extends Component {
 
         this.handleChange = this.handleChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     handleChange = (event) => {
@@ -36,6 +37,15 @@ class Skills extends Component {
         })
     }
 
+    handleDelete = (id) => {
+        this.setState({
+            skills: this.state.skills.filter((skill) =>
+                skill.id !== id
+            )
+        })
+        this.render()
+    }
+
     render() {
         return (
             <div>
@@ -48,7 +58,9 @@ class Skills extends Component {
                 <div>
                     <ul>
                         {this.state.skills.map((skill) => {
-                            return <li key={skill.id}>{skill.text}</li>
+                            return <div key={skill.id}><li>{skill.text}</li>
+                            <button onClick={() => this.handleDelete(skill.id)}>Delete</button>
+                            </div>
                         })}
                     </ul>
                 </div>
