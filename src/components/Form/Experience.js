@@ -7,7 +7,7 @@ class Experience extends Component {
 
         this.state = {
             experience: {
-                id: uniqid(),
+                experienceId: uniqid(),
                 position: "",
                 company: "",
                 location: "",
@@ -39,7 +39,7 @@ class Experience extends Component {
         this.setState({
             experiences: [...this.state.experiences, this.state.experience],
             experience: {
-                id: uniqid(),
+                experienceId: uniqid(),
                 position: "",
                 company: "",
                 location: "",
@@ -69,6 +69,19 @@ class Experience extends Component {
                     <input type="date" name="dateTo" value={this.state.experience.dateTo} onChange={this.handleChange}  id="dateTo" placeholder="To"></input>
                     <button type="submit">Add</button>
                 </form>
+                <div>
+                    {this.state.experiences.map((experience, index) => {
+                        return <div key={experience.experienceId}>
+                            <div key={index}>{experience.position}</div>
+                            <div key={index}>{experience.company}</div>
+                            <div key={index}>{experience.location}</div>
+                            <div key={index}>{experience.dateFrom}</div>
+                            <div key={index}>{experience.dateTo}</div>
+
+                        </div>
+                        
+                    })}
+                </div>
             </div>
 
             

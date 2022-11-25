@@ -7,6 +7,7 @@ class Education extends Component {
 
         this.state = {
             education: {
+                educationId: uniqid(),
                 institution: "",
                 location: "",
                 qualification: "",
@@ -40,7 +41,7 @@ class Education extends Component {
         this.setState({
             educations: [...this.state.educations, this.state.education],
             education: {
-                id: uniqid(),
+                educationId: uniqid(),
                 institution: "",
                 location: "",
                 qualification: "",
@@ -77,6 +78,17 @@ class Education extends Component {
 
                     <button type="submit">Add</button>
                 </form>
+                <div>
+                    {this.state.educations.map((education, index) => {
+                        return <div key={education.educationId}>
+                            <div key={index}>{education.institution}</div>
+                            <div key={index}>{education.location}</div>
+                            <div key={index}>{education.qualification}</div>
+                            <div key={index}>{education.dateFrom}</div>
+                            <div key={index}>{education.dateTo}</div>
+                        </div>
+                    })}
+                </div>
             </div>
         )
     }
