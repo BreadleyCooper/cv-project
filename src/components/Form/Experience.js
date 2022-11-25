@@ -19,6 +19,7 @@ class Experience extends Component {
 
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
     handleChange = (event) => {
         const target = event.target
@@ -49,8 +50,12 @@ class Experience extends Component {
         })
     }
 
-    handleDelete = (event) => {
-        
+    handleDelete = (key) => { //THIS ISNT WORKING
+        this.setState({
+            experiences: this.state.experiences.filter((experience) => 
+                experience.experienceId !== key  
+            )
+        })
     }
     render() {
         return (
@@ -76,12 +81,12 @@ class Experience extends Component {
                 <div>
                     {this.state.experiences.map((experience, index) => {
                         return <div key={experience.experienceId}>
-                            <div key={index}>{experience.position}</div>
-                            <div key={index}>{experience.company}</div>
-                            <div key={index}>{experience.location}</div>
-                            <div key={index}>{experience.dateFrom}</div>
-                            <div key={index}>{experience.dateTo}</div>
-                            <button>Delete</button>
+                            <div>{experience.position}</div>
+                            <div>{experience.company}</div>
+                            <div>{experience.location}</div>
+                            <div>{experience.dateFrom}</div>
+                            <div>{experience.dateTo}</div>
+                            <button onClick={this.handleDelete}>Delete</button>
 
                         </div>
                         
