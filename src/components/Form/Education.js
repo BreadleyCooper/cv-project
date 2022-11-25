@@ -86,6 +86,7 @@ class Education extends Component {
                             <div key={index}>{education.qualification}</div>
                             <div key={index}>{education.dateFrom}</div>
                             <div key={index}>{education.dateTo}</div>
+                            <button>Delete</button>
                         </div>
                     })}
                 </div>

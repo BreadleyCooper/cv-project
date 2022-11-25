@@ -48,6 +48,10 @@ class Experience extends Component {
             }
         })
     }
+
+    handleDelete = (event) => {
+        
+    }
     render() {
         return (
             <div>
@@ -77,6 +81,7 @@ class Experience extends Component {
                             <div key={index}>{experience.location}</div>
                             <div key={index}>{experience.dateFrom}</div>
                             <div key={index}>{experience.dateTo}</div>
+                            <button>Delete</button>
 
                         </div>
                         
