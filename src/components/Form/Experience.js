@@ -50,12 +50,13 @@ class Experience extends Component {
         })
     }
 
-    handleDelete = (event) => { //THIS ISNT WORKING
+    handleDelete = (id) => { //THIS ISNT WORKING
         this.setState({
             experiences: this.state.experiences.filter((experience) => 
-                experience.experienceId !== event.key
+                experience.experienceId !== id
             )
         })
+        this.render()
     }
     render() {
         return (
@@ -86,7 +87,7 @@ class Experience extends Component {
                             <div>{experience.location}</div>
                             <div>{experience.dateFrom}</div>
                             <div>{experience.dateTo}</div>
-                            <button onClick={this.handleDelete(experience.experienceId)}>Delete</button>
+                            <button onClick={() => this.handleDelete(experience.experienceId)}>Delete</button>
 
                         </div>
                         
