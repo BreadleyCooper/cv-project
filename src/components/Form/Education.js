@@ -52,6 +52,15 @@ class Education extends Component {
         })
     }
 
+    handleDelete = (id) => { //THIS ISNT WORKING
+        this.setState({
+            educations: this.state.educations.filter((education) => 
+                education.educationId !== id
+            )
+        })
+        this.render()
+    }
+
 
     render() {
         return(
@@ -86,7 +95,7 @@ class Education extends Component {
                             <div>{education.qualification}</div>
                             <div>{education.dateFrom}</div>
                             <div>{education.dateTo}</div>
-                            <button>Delete</button>
+                            <button onClick={() => this.handleDelete(education.educationId)}>Delete</button>
                         </div>
                     })}
                 </div>
