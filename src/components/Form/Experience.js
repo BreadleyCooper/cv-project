@@ -14,7 +14,8 @@ class Experience extends Component {
                 dateFrom: "",
                 dateTo: "",
             },
-            experiences: []
+            experiences: [],
+            editMode: true,
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -46,7 +47,8 @@ class Experience extends Component {
                 location: "",
                 dateFrom: "",
                 dateTo: "",
-            }
+            },
+            editMode: false
         })
     }
 
@@ -59,6 +61,7 @@ class Experience extends Component {
         this.render()
     }
     render() {
+        if (this.state.editMode) {
         return (
             <div>
                 <h2>{this.props.title}</h2>
@@ -97,7 +100,25 @@ class Experience extends Component {
 
             
         )
-    }
+    }   else {
+            return(
+            <div>
+                <h2>{this.props.title}</h2>
+                {this.state.experiences.map((experience, index) => {
+                        return <div key={experience.experienceId}>
+                            <div>{experience.position}</div>
+                            <div>{experience.company}</div>
+                            <div>{experience.location}</div>
+                            <div>{experience.dateFrom}</div>
+                            <div>{experience.dateTo}</div>
+                            <button onClick={() => this.handleDelete(experience.experienceId)}>Delete</button>
+                            <button>Edit</button>
+                        </div>
+                    })}
+            </div>
+    )}
+         
+}
 }
 
 export default Experience
