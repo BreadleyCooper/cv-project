@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 
-
 class Personal extends Component {
     constructor (props) {
         super(props)
@@ -47,7 +46,7 @@ class Personal extends Component {
 
         if (this.state.editMode) {
         return (
-            <div>
+            <div className="personalForm">
                 <h2>{this.props.title}</h2>
                 <form>
                     <label htmlFor="first_name">First Name</label>

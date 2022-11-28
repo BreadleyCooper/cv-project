@@ -8,24 +8,21 @@ body {
   background-color: grey;
 }
 
-.header {
-  border-bottom: 3px black solid;
-  display: flex;
-  justify-content: space-between;
-}
-
-.header a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .container {
   display: flex;
   margin: 5rem;
+  justify-content: center;
+  
 }
 
 .cvContainer {
   background-color: rgb(233, 233, 233);
-  padding: 1rem
+  padding: 2rem;
+  max-width: 1000px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 0;
+  }
 }

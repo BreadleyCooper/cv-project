@@ -1,0 +1,33 @@
+.personalForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.personalForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+ 
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  max-width: 1000px;
+}
+
+label {
+    padding: 0.5rem
+}
+
+.personalForm form {
+    display: flex;
+    flex: 0
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+}
