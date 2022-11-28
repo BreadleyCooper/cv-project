@@ -11,13 +11,14 @@ class App extends Component {
   }
   render() {
     return(
-      <div
-        className="formContainer">
+      <div className="container">
+        <div className="cvContainer">
         <Header title="CV Creator App" />
         <Personal title="Personal Information" />
         <Skills title="Skills" skills=""/>
         <Education title = "Education" />
-        <Experience title = "Experience" />
+        <Experience title = "Experience" /></div>
+        
       </div>
 
     
