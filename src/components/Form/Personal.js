@@ -13,6 +13,7 @@ class Personal extends Component {
             email: "",
             address: "",
             personalDescription: "",
+            editMode: true,
             };
         
         this.handleChange = this.handleChange.bind(this)
@@ -28,7 +29,23 @@ class Personal extends Component {
             personalDescription: event.target.value
         })
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        if (this.state.editMode === true){
+        this.setState ({
+            editMode: false 
+        })
+        } else {
+            this.setState ({
+                editMode: true
+            })
+        }
+    }
+
     render() {
+
+        if (this.state.editMode) {
         return (
             <div>
                 <h2>{this.props.title}</h2>
@@ -53,10 +70,28 @@ class Personal extends Component {
 
                     <label htmlFor="description">Personal Description</label>
                     <textarea type="text" name="description" value={this.state.personalDescription} onChange={this.handleTextareaChange}  id="description" placeholder="Describe yourself here"></textarea>
-                    
+                    <button onClick={this.handleSubmit}>Save</button>
                 </form>
             </div>
         )
+        }
+        else {
+            return(
+                <div>
+                    <h2>{this.props.title}</h2>
+                    <p>{this.state.firstName}</p>
+                    <p>{this.state.lastName}</p>
+                    <p>{this.state.jobTitle}</p>
+                    <p>{this.state.jobTitle}</p>
+                    <p>{this.state.phone}</p>
+                    <p>{this.state.address}</p>
+                    <p>{this.state.email}</p>
+                    <p>{this.state.address}</p>
+                    <p>{this.state.personalDescription}</p>
+                    <button onClick={this.handleSubmit}>Edit</button>
+                </div>
+            )
+        }
     }
 }
 
