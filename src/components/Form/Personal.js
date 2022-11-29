@@ -69,7 +69,7 @@ class Personal extends Component {
 
                     <label htmlFor="description">Personal Description</label>
                     <textarea type="text" name="description" value={this.state.personalDescription} onChange={this.handleTextareaChange}  id="description" placeholder="Describe yourself here"></textarea>
-                    <button onClick={this.handleSubmit}>Save</button>
+                    <button id="eButton" onClick={this.handleSubmit}>Save</button>
                 </form>
             </div>
         )
