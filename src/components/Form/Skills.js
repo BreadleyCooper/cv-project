@@ -50,7 +50,7 @@ class Skills extends Component {
         return (
             <div>
                 <h2>{this.props.title}</h2>
-                <form onSubmit={this.onSubmit}>
+                <form className="skillForm" onSubmit={this.onSubmit}>
                     <label htmlFor="skillInput">Skills</label>
                     <input type="text" name="skillInput" value={this.state.skill.text} onChange={this.handleChange} id="skillInput"></input>
                     <button type="submit">Add Skill</button>
@@ -58,7 +58,7 @@ class Skills extends Component {
                 <div>
                     <ul>
                         {this.state.skills.map((skill) => {
-                            return <div key={skill.id}><li>{skill.text}</li>
+                            return <div className="skillContainer" key={skill.id}><li>{skill.text}</li>
                             <button onClick={() => this.handleDelete(skill.id)}>Delete</button>
                             </div>
                         })}

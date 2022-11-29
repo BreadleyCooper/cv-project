@@ -63,7 +63,7 @@ class Experience extends Component {
     render() {
         if (this.state.editMode) {
         return (
-            <div>
+            <div className="experienceForm">
                 <h2>{this.props.title}</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="position">Position</label>
@@ -74,13 +74,15 @@ class Experience extends Component {
 
                     <label htmlFor="location">Location</label>
                     <input type="text" name="location" value={this.state.experience.location} onChange={this.handleChange}  id="location" placeholder="Location"></input>
-                
-                    <label htmlFor="dateFrom">From</label>
-                    <input type="date" name="dateFrom" value={this.state.experience.dateFrom} onChange={this.handleChange}  id="dateFrom" placeholder="From"></input>
-                
-                    <label htmlFor="dateTo">To</label>
-                    <input type="date" name="dateTo" value={this.state.experience.dateTo} onChange={this.handleChange}  id="dateTo" placeholder="To"></input>
-                    <button type="submit">Add</button>
+
+                    <div className="dateContainer">
+                        <label htmlFor="dateFrom">From</label>
+                        <input type="date" name="dateFrom" value={this.state.experience.dateFrom} onChange={this.handleChange}  id="dateFrom" placeholder="From"></input>
+                    
+                        <label htmlFor="dateTo">To</label>
+                        <input type="date" name="dateTo" value={this.state.experience.dateTo} onChange={this.handleChange}  id="dateTo" placeholder="To"></input>
+                    </div>
+                    <button id="eButton"type="submit">Add</button>
                 </form>
                 <div>
                     {this.state.experiences.map((experience, index) => {

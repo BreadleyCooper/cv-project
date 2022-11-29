@@ -1,0 +1,18 @@
+.educationForm {
+    display: flex;
+    flex-direction: column;
+    }
+    
+.educationForm form {
+    display: flex;
+    flex-direction: column;
+    }
+
+.dateContainer {
+    display: flex;
+    margin-top: 1rem;
+}
+    
+#eButton {
+    margin-left: auto;
+}

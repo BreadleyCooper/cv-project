@@ -33,6 +33,11 @@ input {
     border: none;
 }
 
+textarea {
+    min-height: 100px;
+    resize: none
+}
+
 /* Saved */
 
 .personalSaved {

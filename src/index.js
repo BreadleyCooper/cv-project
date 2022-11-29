@@ -4,6 +4,9 @@ import App from "./App"
 import "./styles/personal.css"
 import "./styles/header.css"
 import "./styles/body.css"
+import "./styles/skills.css"
+import "./styles/education.css"
+import "./styles/experience.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

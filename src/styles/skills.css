@@ -1,0 +1,18 @@
+.skillForm {
+    display: flex;
+    align-items: center;
+}
+
+.skillForm button {
+    margin-left:  2rem;
+}
+
+.skillContainer {
+    display: flex;
+    align-items: center;
+}
+
+.skillContainer button {
+    margin-left: 2rem
+}
+

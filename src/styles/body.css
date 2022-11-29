@@ -18,6 +18,7 @@ body {
 .cvContainer {
   background-color: rgb(233, 233, 233);
   padding: 2rem;
+  width: 100%;
   max-width: 1000px;
 }
 

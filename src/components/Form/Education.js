@@ -64,7 +64,7 @@ class Education extends Component {
 
     render() {
         return(
-            <div>
+            <div className="educationForm">
                 <h2>{this.props.title}</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="institution">Institution Name</label>
@@ -78,14 +78,15 @@ class Education extends Component {
                 
                     <label htmlFor="subject">Subject</label>
                     <input type="text" name="subject" value={this.state.education.subject} onChange={this.handleChange}  id="subject" placeholder="Subject"></input>
+                    
+                    <div className="dateContainer">
+                        <label htmlFor="dateFrom">From</label>
+                        <input type="date" name="dateFrom" value={this.state.education.dateFrom} onChange={this.handleChange}  id="dateFrom" placeholder="From"></input>
 
-                    <label htmlFor="dateFrom">From</label>
-                    <input type="date" name="dateFrom" value={this.state.education.dateFrom} onChange={this.handleChange}  id="dateFrom" placeholder="From"></input>
-
-                    <label htmlFor="dateTo">To</label>
-                    <input type="date" name="dateTo" value={this.state.education.dateTo} onChange={this.handleChange}  id="dateTo" placeholder="To"></input>
-
-                    <button type="submit">Add</button>
+                        <label htmlFor="dateTo">To</label>
+                        <input type="date" name="dateTo" value={this.state.education.dateTo} onChange={this.handleChange}  id="dateTo" placeholder="To"></input>
+                    </div>
+                    <button id="eButton" type="submit">Add</button>
                 </form>
                 <div>
                     {this.state.educations.map((education, index) => {
