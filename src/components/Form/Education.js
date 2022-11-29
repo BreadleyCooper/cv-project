@@ -90,13 +90,13 @@ class Education extends Component {
                 </form>
                 <div>
                     {this.state.educations.map((education, index) => {
-                        return <div key={education.educationId}>
-                            <div>{education.institution}</div>
-                            <div>{education.location}</div>
-                            <div>{education.qualification}</div>
-                            <div>{education.dateFrom}</div>
-                            <div>{education.dateTo}</div>
-                            <button onClick={() => this.handleDelete(education.educationId)}>Delete</button>
+                        return <div className="educationContainer" key={education.educationId}>
+                            <div className="institution">{education.institution}</div>
+                            <div className="location">{education.location}</div>
+                            <div className="qualification">{education.qualification}</div>
+                            <div className="dateFrom">From: {education.dateFrom}</div>
+                            <div className="dateTo">To: {education.dateTo}</div>
+                            <button id="delEduBtn" onClick={() => this.handleDelete(education.educationId)}>Delete</button>
                         </div>
                     })}
                 </div>

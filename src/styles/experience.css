@@ -7,3 +7,31 @@
     display: flex;
     flex-direction: column;
     }
+
+    /* List styling */
+
+.experienceList {
+    display: grid;
+    grid: repeat(4, 1fr) / repeat(2, 1fr)
+}
+
+.position {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+}
+.company {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+}
+.location {
+    grid-column: 1/1;
+    grid-row: 3/3;
+}
+.dateFromExp {
+    grid-column: 1/1;
+    grid-row: 4/4;
+}
+.dateToExp {
+    grid-column: 2/-1;
+    grid-row: 4/4;
+}

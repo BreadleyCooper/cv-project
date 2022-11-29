@@ -16,3 +16,38 @@
 #eButton {
     margin-left: auto;
 }
+
+/* List styling */
+
+.educationContainer {
+    display: grid;
+    grid: repeat(4, 1fr) / repeat(2, 1fr)
+}
+
+.institution {
+    font-weight: bold;
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+}
+.location {
+    grid-column: 1/ 1;
+    grid-row: 2 / 2;
+}
+.qualification {
+    grid-column: 1/1;
+    grid-row: 3/3;
+}
+.dateFrom {
+    grid-column: 1/1;
+    grid-row: 4 /4 ;
+}
+.dateTo {
+    grid-column: 2 / -1;
+    grid-row: 4/4;
+}
+#delEduBtn {
+    grid-column: 2/-1;
+    grid-row: 4/4;
+    justify-self: end;
+
+}

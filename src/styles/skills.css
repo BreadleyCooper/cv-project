@@ -7,6 +7,10 @@
     margin-left:  2rem;
 }
 
+.skillForm input {
+    width: 100%;
+}
+
 .skillContainer {
     display: flex;
     align-items: center;
