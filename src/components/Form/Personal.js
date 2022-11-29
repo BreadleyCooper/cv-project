@@ -76,18 +76,17 @@ class Personal extends Component {
         }
         else {
             return(
-                <div>
-                    <h2>{this.props.title}</h2>
-                    <p>{this.state.firstName}</p>
-                    <p>{this.state.lastName}</p>
-                    <p>{this.state.jobTitle}</p>
-                    <p>{this.state.jobTitle}</p>
-                    <p>{this.state.phone}</p>
-                    <p>{this.state.address}</p>
-                    <p>{this.state.email}</p>
-                    <p>{this.state.address}</p>
-                    <p>{this.state.personalDescription}</p>
-                    <button onClick={this.handleSubmit}>Edit</button>
+                <div className="personalSaved">
+                    <div className="nameContainer">
+                        <p>{this.state.firstName}</p>
+                        <p>{this.state.lastName}</p>
+                    </div>
+                    <p className="address">{this.state.address}</p>
+                    <p className="jobTitle">{this.state.jobTitle}</p>
+                    <p className="phone">{this.state.phone}</p>
+                    <p className="email">{this.state.email}</p>
+                    <p className="personalDesc">{this.state.personalDescription}</p>
+                    <button id="editBtn" onClick={this.handleSubmit}>Edit</button>
                 </div>
             )
         }

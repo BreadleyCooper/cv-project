@@ -8,6 +8,7 @@
     flex-direction: column;
 }
 
+/* Editing */
  
 button,
 input,
@@ -30,4 +31,52 @@ input {
     padding: 0.5rem;
     border-radius: 5px;
     border: none;
+}
+
+/* Saved */
+
+.personalSaved {
+    display: grid;
+    border-bottom: solid black 2px;
+    grid: repeat(3, 3rem) / repeat(2, 1fr);
+}
+
+.nameContainer {
+    display: flex;
+    grid-row-start: 1;
+}
+.nameContainer p {
+    padding-right: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.address {
+    grid-row-start: 1;
+    grid-column: 2;
+    justify-self: end;
+}
+
+.jobTitle {
+    grid-column: 1;
+    grid-row: 2
+}
+
+.phone {
+    justify-self: end;
+    grid-column: 2;
+}
+
+.email {
+    justify-self: end;
+    grid-column: 2;
+}
+
+.personalDesc {
+    grid-column: 1 / -1;
+}
+
+#editBtn {
+    justify-self: end;
+    grid-column: 2;
 }
