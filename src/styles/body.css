@@ -31,5 +31,5 @@ body {
 button {
   border: black solid 1px;
   height: fit-content;
-  min-height: 3rem;
+  min-height: 1rem;
 }

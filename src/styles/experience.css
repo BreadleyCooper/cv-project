@@ -12,7 +12,7 @@
 
 .experienceList {
     display: grid;
-    grid: repeat(4, 1fr) / repeat(2, 1fr)
+    grid: repeat(5, 1fr) / repeat(2, 1fr)
 }
 
 .position {
@@ -23,7 +23,7 @@
     grid-column: 1 / 1;
     grid-row: 2 / 2;
 }
-.location {
+.expLocation {
     grid-column: 1/1;
     grid-row: 3/3;
 }
@@ -34,4 +34,9 @@
 .dateToExp {
     grid-column: 2/-1;
     grid-row: 4/4;
+}
+.delExpBtn{
+    grid-column: 2/-1;
+    grid-row: 5/5;
+    justify-self: end;
 }

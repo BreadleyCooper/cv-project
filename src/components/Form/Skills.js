@@ -59,7 +59,7 @@ class Skills extends Component {
                     <ul>
                         {this.state.skills.map((skill) => {
                             return <div className="skillContainer" key={skill.id}><li>{skill.text}</li>
-                            <button onClick={() => this.handleDelete(skill.id)}>Delete</button>
+                            <button id="skillEditBtn" onClick={() => this.handleDelete(skill.id)}>Delete</button>
                             </div>
                         })}
                     </ul>

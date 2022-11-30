@@ -21,7 +21,7 @@
 
 .educationContainer {
     display: grid;
-    grid: repeat(4, 1fr) / repeat(2, 1fr)
+    grid: repeat(5, 1fr) / repeat(2, 1fr)
 }
 
 .institution {
@@ -29,13 +29,13 @@
     grid-column: 1 / 1;
     grid-row: 1 / 1;
 }
-.location {
+.eduLocation {
     grid-column: 1/ 1;
     grid-row: 2 / 2;
 }
 .qualification {
     grid-column: 1/1;
-    grid-row: 3/3;
+    grid-row: 3 / 3;
 }
 .dateFrom {
     grid-column: 1/1;
@@ -47,7 +47,7 @@
 }
 #delEduBtn {
     grid-column: 2/-1;
-    grid-row: 4/4;
+    grid-row: 5/5;
     justify-self: end;
 
 }

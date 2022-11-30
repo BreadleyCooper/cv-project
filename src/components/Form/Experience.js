@@ -86,7 +86,7 @@ class Experience extends Component {
                         return <div className="experienceList" key={experience.experienceId}>
                             <div className="position">{experience.position}</div>
                             <div className="company">{experience.company}</div>
-                            <div className="location">{experience.location}</div>
+                            <div className="expLocation">{experience.location}</div>
                             <div className="dateFromExp">From: {experience.dateFrom}</div>
                             <div className="dateToExp">To: {experience.dateTo}</div>
                             <button className="delExpBtn" onClick={() => this.handleDelete(experience.experienceId)}>Delete</button>

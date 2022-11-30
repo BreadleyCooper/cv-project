@@ -92,7 +92,7 @@ class Education extends Component {
                     {this.state.educations.map((education, index) => {
                         return <div className="educationContainer" key={education.educationId}>
                             <div className="institution">{education.institution}</div>
-                            <div className="location">{education.location}</div>
+                            <div className="eduLocation">{education.location}</div>
                             <div className="qualification">{education.qualification}</div>
                             <div className="dateFrom">From: {education.dateFrom}</div>
                             <div className="dateTo">To: {education.dateTo}</div>

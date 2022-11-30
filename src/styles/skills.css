@@ -14,9 +14,13 @@
 .skillContainer {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .skillContainer button {
     margin-left: 2rem
 }
 
+#skillEditBtn {
+    font-size: 0.8rem;
+}
