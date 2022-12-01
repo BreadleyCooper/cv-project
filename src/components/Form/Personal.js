@@ -1,7 +1,6 @@
-import { render } from "@testing-library/react";
 import React, { useState } from "react";
 
-const Personal = () => {
+const Personal = (props) => {
     const [details, setDetails] = useState({
         firstName: "",
         lastName: "",
@@ -38,7 +37,7 @@ const Personal = () => {
     if (editMode) {
         return (
             <div className="personalForm">
-                <h2>{this.props.title}</h2>
+                <h2>{props.title}</h2>
                 <form>
                     <label htmlFor="first_name">First Name</label>
                     <input type="text" name="firstName" value={details.firstName} onChange={handleChange}  id="first_name" placeholder="First Name"></input>
