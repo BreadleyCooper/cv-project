@@ -1,30 +1,30 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
 import uniqid from "uniqid"
 
-const Skills = (props) =>{
-    const [skill, setSkill] = 
+const Skills = (props) => {
+    const [skill, setSkill] = useState(
         {text: "",
         id: uniqid()
-        }
-    const [skills, setSkills] = []
+        })
+    const [skills, setSkills] = useState([])
 
     const handleChange = (event) => {
         setSkill({
                 text: event.target.value,
                 id: skill.id
         })
-    }
+    };
 
     const onSubmit = (event) => {
         event.preventDefault()
-        setSkills({
-            skills: skills.concat(skill),
-            })
+        setSkills(
+            skills.concat(skill),
+            )
         setSkill ({
             text: "",
             id: uniqid()
         })
-    }
+    };
 
     const handleDelete = (id) => {
         setSkills({
@@ -32,7 +32,7 @@ const Skills = (props) =>{
                 skill.id !== id
             )
         })
-    }
+    };
 
     return (
         <div>
@@ -45,8 +45,9 @@ const Skills = (props) =>{
             <div>
                 <ul>
                     {skills.map((skill) => {
-                        return <div className="skillContainer" key={skill.id}><li>{skill.text}</li>
-                        <button id="skillEditBtn" onClick={() => handleDelete(skill.id)}>Delete</button>
+                        return <div className="skillContainer" key={skill.id}>
+                            <li>{skill.text}</li>
+                            <button id="skillEditBtn" onClick={() => handleDelete(skill.id)}>Delete</button>
                         </div>
                     })}
                 </ul>

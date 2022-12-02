@@ -52,7 +52,7 @@ class Education extends Component {
         })
     }
 
-    handleDelete = (id) => { //THIS ISNT WORKING
+    handleDelete = (id) => { 
         this.setState({
             educations: this.state.educations.filter((education) => 
                 education.educationId !== id
